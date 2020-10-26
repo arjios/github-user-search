@@ -1,5 +1,7 @@
 .navbar-main {
-    display: grid;
+    display: flex;
+    align-items: center;
+    text-align: center;
     height: 62px;
     background: #1890FF;
 }
@@ -10,9 +12,7 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
-    display: flex;
-    align-items: center;
-    padding-left: 41px;    
+    padding-left: 41px;
     color: #FFFFFF;
 }
 

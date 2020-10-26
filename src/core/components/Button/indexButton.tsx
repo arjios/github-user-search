@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const idxButton = () => {
+type Props = {
+    indexButtonText: string;
+}
+
+const indexButton = ({indexButtonText}: Props) => {
     return (
-        <Link to="/">
-            <h1>Botão</h1>
-        </Link>
-
+        <div className="button-text">
+            {indexButtonText}
+        </div>
     )
 }
 
-export default idxButton;
+export default indexButton;
