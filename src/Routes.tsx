@@ -3,17 +3,21 @@ import React from 'react';
 
 import Home from './pages/Home/indexHome';
 import Navbar from './core/components/Navbar/indexNavbar';
-import Search from './pages/Search/indexSearch';
+import Info from './pages/Info/indexInfo';
+import SearchRoutes from './pages/SearchRoutes';
 
 const Routes = () => (
     <BrowserRouter>
-    <Navbar/>
+    <Navbar />
         <Switch>
             <Route path="/" exact>
                 <Home />
             </Route>
-            <Route path="/Search">
-                <Search />
+            <Route path="/SearchRoutes">
+                <SearchRoutes />
+            </Route>
+            <Route path="/Info">
+                <Info />
             </Route>
         </Switch>
     </BrowserRouter>

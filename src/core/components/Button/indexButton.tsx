@@ -6,7 +6,7 @@ type Props = {
 
 const indexButton = ({indexButtonText}: Props) => {
     return (
-        <div className="button-text">
+        <div className="index-button">
             {indexButtonText}
         </div>
     )
