@@ -6,9 +6,9 @@ type Props = {
 
 const indexButton = ({indexButtonText}: Props) => {
     return (
-        <div className="index-button">
-            {indexButtonText}
-        </div>
+        <button className="index-button">
+            { indexButtonText }
+        </button>
     )
 }
 

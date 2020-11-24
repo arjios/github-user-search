@@ -22,7 +22,7 @@ const Home = () => {
                 Mateusz Wierzbicki: antforfigma@gmail.com</p><br />
             </div>
             <div className="home-button">
-                <Link to="/SearchRoutes" className="home-button-text">
+                <Link to="/SearchInfo" className="home-button-text">
                     <Button indexButtonText="Começar" />
                 </Link>
             </div>

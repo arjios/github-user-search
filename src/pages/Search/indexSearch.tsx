@@ -1,51 +1,46 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import Button from '../../core/components/Button/indexButton';
 
 import './stylesSearch.css';
 
-type FormEvent = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
-
-type ParamsType = {
-    userLogin: string;
+type Props = {
+    onSearch: (search: string) => void;
 }
 
-const Search = () => {
+function Search({ onSearch }: Props) {
 
-    const { userLogin } = useParams<ParamsType>();
-
-    const handleOnChange = (event: FormEvent) => {
-        const userLogin = event.target.value;
-        console.log(userLogin);
-    }
+    const [search, setSearch] = useState('');
+    console.log("indexSearch");
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(userLogin);
+        console.log("handleSubmit");
+        onSearch(search);
+    }
+
+    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(event.target.value);
     }
 
     return (
-            <div className="search-card-container">
-                <div className="search-card-title">
-                    Encontre um perfil Github
-                    </div>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        name="name"
-                        value={userLogin}
-                        type="text"
-                        className="search-card-input search-card-input-text"
-                        onChange={handleOnChange}
-                        placeholder="Nome do Usuario"
-                    />
-                    <div className="search-card-button">
-                        <Link to="/Info" className="home-button-text">
-                            <Button indexButtonText="Encontrar" />
-                        </Link>
-                    </div>
-                </form>
+       <form onSubmit={handleSubmit} className="search-card-container">
+            <div className="search-card-title">
+                Encontre um perfil Github
             </div>
+            <input
+                type="text"
+                className="search-card-input search-card-input-text"
+                placeholder="Nome do Usuario"
+                onChange={handleOnChange}
+            />
+            <div className="search-card-button">
+                <Link to="/Info" className="home-button-text">
+                    <Button indexButtonText="Encontrar" />
+                </Link>
+            </div>
+        </form>
     )
-
 }
 export default Search;
