@@ -6,14 +6,13 @@ import { makeRequest } from '../utils/request';
 import { User } from '../types/User';
 import Info from '../../pages/Info/indexInfo';
 
-function SearchInfo() {
+
+const SearchInfo = () => {
 
     const [userInfo, setUserInfo] = useState<User>();
 
     const handleSearch = (search: string) => {
-        console.log("Login: ");
-        (search ? console.log(search) : console.log("Não existe search"))
-        makeRequest({ url: `url : /${search}`, method: 'GET' })
+        makeRequest({ url: `/${search}`, method: 'GET' })
             .then(response => {
                 setUserInfo(response.data)})
             .catch(() => {
@@ -25,7 +24,7 @@ function SearchInfo() {
         <div>
             <Search onSearch={handleSearch} />
             {
-                userInfo && (<Info user = {userInfo }/>)
+                userInfo && (<Info user = {userInfo}/>)
             }
         </div>
     );

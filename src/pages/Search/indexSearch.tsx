@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Button from '../../core/components/Button/indexButton';
 
@@ -9,14 +8,12 @@ type Props = {
     onSearch: (search: string) => void;
 }
 
-function Search({ onSearch }: Props) {
+const Search = ({ onSearch }: Props) => {
 
-    const [search, setSearch] = useState('');
-    console.log("indexSearch");
+    const [search, setSearch] = useState("");
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        console.log("handleSubmit");
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         onSearch(search);
     }
 
@@ -25,7 +22,7 @@ function Search({ onSearch }: Props) {
     }
 
     return (
-       <form onSubmit={handleSubmit} className="search-card-container">
+        <form onSubmit={handleSubmit} className="search-card-container">
             <div className="search-card-title">
                 Encontre um perfil Github
             </div>
@@ -36,9 +33,7 @@ function Search({ onSearch }: Props) {
                 onChange={handleOnChange}
             />
             <div className="search-card-button">
-                <Link to="/Info" className="home-button-text">
-                    <Button indexButtonText="Encontrar" />
-                </Link>
+                <Button indexButtonText="Encontrar"/>
             </div>
         </form>
     )

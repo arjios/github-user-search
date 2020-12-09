@@ -1,6 +1,11 @@
-.index-button {
-    height: 24px;
-    left: 110px;
-    right: 1072px;
-    top: calc(50% - 24px/2 + 73px);
+.index-button-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+
+    border: none;
+    background-color: #1890FF;
+    color: #FFFFFF;
 }

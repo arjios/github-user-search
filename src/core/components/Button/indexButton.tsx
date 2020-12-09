@@ -1,4 +1,5 @@
 import React from 'react';
+import "./stylesButton.css";
 
 type Props = {
     indexButtonText: string;
@@ -6,7 +7,7 @@ type Props = {
 
 const indexButton = ({indexButtonText}: Props) => {
     return (
-        <button className="index-button">
+        <button className="index-button-text">
             { indexButtonText }
         </button>
     )

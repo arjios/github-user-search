@@ -23,12 +23,11 @@ const Home = () => {
             </div>
             <div className="home-button">
                 <Link to="/SearchInfo" className="home-button-text">
-                    <Button indexButtonText="Começar" />
+                    <Button indexButtonText="Começar"/>
                 </Link>
             </div>
         </div>
     )
 }
-
 
 export default Home;

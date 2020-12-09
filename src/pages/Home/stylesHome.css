@@ -41,11 +41,10 @@
 }
 
 .home-button-text {
-    color: #FFF;
+    padding: 8px , 18px, 8px, 18px;
+    
     text-decoration: none;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }

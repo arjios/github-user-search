@@ -10,7 +10,7 @@ type Props = {
     user: User;
 }
 
-function Info({ user }: Props) {
+const Info = ({ user }: Props) => {
     return (
         <div className="info-card-container">
             <div className="info-card-image">
@@ -59,13 +59,13 @@ function Info({ user }: Props) {
                     </div>
                     <div className="info-card-person">
                         <LabelInfo
-                            indexLabelInfoText="Localidade: "
+                            indexLabelInfoText="Localidade:" 
                         />
                         {user?.location}
                     </div>
                     <div className="info-card-person">
-                        <LabelInfo
-                            indexLabelInfoText="Membro desde: "
+                        <LabelInfo 
+                            indexLabelInfoText="Membro desde:"
                         />
                         {user?.created_at}
                     </div>
