@@ -1,18 +1,22 @@
 import React from 'react';
+import {Link}  from 'react-router-dom';
 
 import LabelInfo from '../../core/components/LabelInfo/indexLabelInfo';
 import { User } from '../../core/types/User';
 import Button from '../../core/components/Button/indexButton';
 
+
 import './stylesInfo.css';
 
 type Props = {
-    user: User;
+    user?: User;
 }
 
 const Info = ({ user }: Props) => {
+
     return (
-        <div className="info-card-container">
+        <>
+            <div className="info-card-container">
             <div className="info-card-image">
                 <img src={user?.avatar_url}
                     alt="avatar"
@@ -71,10 +75,13 @@ const Info = ({ user }: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="info-card-button">
-                <Button indexButtonText="Ver perfil" />
-            </div>
+            <a href={`https://github.com/${user?.login}`}
+              className="info-card-button"
+              target="_new">
+                <Button indexButtonText="Ver perfil"/>          
+            </a>
         </div>
+        </>
     );
 }
 
